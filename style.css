@@ -1,0 +1,313 @@
+/* Reset & Base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f5f7fa;
+    color: #222;
+  }
+  .container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 1rem;
+  }
+  
+  /* Navigation */
+  nav {
+    background-color: #2f3e46;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    top: 0;
+    z-index: 1000;
+    padding: 0.4rem 0.5rem;
+    gap: 0.3rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  }
+  nav a {
+    color: #cad2c5;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.3rem 0.4rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    flex: 1 1 auto;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  nav a:hover,
+  nav a.active {
+    background-color: #52796f;
+    color: #e9edc9;
+  }
+  
+  
+  
+  
+  /* Profile */
+  #profile-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.07);
+  }
+  #profile-text {
+    flex: 1;
+    font-size: 1.5rem;
+  }
+  #profile-image {
+    width: 280px;
+    height: 420px;
+    background-image: url('images/profile.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+  }
+  
+  /* Sections */
+  section {
+    background: #fff;
+    margin-top: 2rem;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.07);
+  }
+  section h2 {
+    margin-top: 0;
+    color: #52796f;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+  
+    /* This line creates the underline effect */
+    border-bottom: 3px solid #52796f;
+  
+    padding-bottom: 0.3rem;
+  }
+  
+  /* Family Cards */
+  .cards-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  #card-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+  }
+  .family-card {
+    position: absolute;
+    background: #f9f9f9;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.4s ease;
+  }
+  .family-card.active {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .arrow-btn {
+    background: none;
+    font-size: 2rem;
+    color: #52796f;
+    border: none;
+    cursor: pointer;
+  }
+  .dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 4px;
+    background: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .dot.active-dot {
+    background: #52796f;
+  }
+  #dots {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  #family .family-card p {
+    margin-bottom: 0.6rem;
+  }
+
+  #family .family-card h3 {
+    margin-bottom: 1rem;
+  }
+  
+  
+  /* Hobbies */
+  #hobbies {
+    background-image: url('images/hbbg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 400px;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    color: #fff;
+  }
+  .hobbies-overlay {
+    background-color: rgba(0, 0, 0, 0.4); /* Dark overlay */
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .hobbies-content {
+    max-width: 500px;
+  }
+
+  .hobbies-content h2 {
+    margin-top: 0;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #fefefe;
+  }
+
+  .hobby-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+    .hobby-tag {
+      background-color: rgba(255, 255, 255, 0.2);
+      border: 1px solid #fff;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.95rem;
+      cursor: default;
+      transition: background-color 0.3s ease;
+    }
+
+    .hobby-tag:hover {
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    @media (max-width: 600px) {
+      #hobbies {
+        height: auto;
+        padding: 2rem 1rem;
+      }
+      .hobbies-content {
+        max-width: 100%;
+      }
+    }
+  /* Thoughts */
+  #thoughts {
+    background: url('https://images.unsplash.com/photo-1585577529543-ec26d4413f70?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    color: #fff;
+    padding: 4rem 2rem;
+  }
+  .thoughts-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+  }
+  .quote {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 1.8rem;
+  }
+  .author {
+    font-style: italic;
+    margin-top: 0.5rem;
+    display: block;
+  }
+  
+  /* Education & Profession */
+  .edu-timeline,
+  .profession-card {
+    margin-top: 1rem;
+  }
+  .edu-entry,
+  .profession-card {
+    background: #f0f0f0;
+    padding: 1rem;
+    border-left: 4px solid #52796f;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background: #2f3e46;
+    color: #cad2c5;
+    margin-top: 3rem;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    #profile-section {
+      flex-direction: column;
+    }
+    #profile-image {
+      width: 100%;
+      height: 400px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    nav a {
+      font-size: 0.75rem;
+      padding: 0.3rem 0.5rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    #thoughts .quote {
+      font-size: 1.2rem;
+    }
+  
+    #thoughts .author {
+      font-size: 0.85rem;
+    }
+  
+    .thoughts-overlay {
+      padding: 2rem 1rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    nav a {
+      font-size: 0.72rem;
+      padding: 0.25rem 0.3rem;
+    }
+  }
+  
+  @media (max-width: 450px) {
+    nav a {
+      font-size: 0.68rem;
+      padding: 0.2rem 0.2rem;
+    }
+  }
+  
+  
+  

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nidhi Bio Data</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="#profile-section" class="nav-link">Profile</a>
+    <a href="#about-me" class="nav-link">About Me</a>
+    <a href="#family" class="nav-link">Family</a>
+    <a href="#hobbies" class="nav-link">Hobbies</a>
+    <a href="#education" class="nav-link">Education</a>
+    <a href="#profession" class="nav-link">Profession</a>
+    <a href="#thoughts" class="nav-link">Thoughts</a>
+  </nav>
+
+  <div class="container">
+    <!-- Profile Image Section -->
+    <section id="profile-section">
+      <div id="profile-text">Hi, This is <span style="color:#52796f; font-weight:700;">Nidhi Shah</span></div>
+      <div id="profile-image"></div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about-me">
+      <h2>About Me</h2>
+      <p><strong>Birthdate:</strong> 31 August, 1998</p>
+      <p><strong>Time:</strong> 5:50 PM</p>
+      <p><strong>Birth Place:</strong> Kalol</p>
+      <p><strong>Native:</strong> Dingucha, Dist. Gandhinagar</p>
+      <p><strong>Height:</strong> 5ft. 2inches</p>
+      <p><strong>Residential Address:</strong> Block No: G-5, Greencity Society, Vavol, Gandhinagar, 382016</p>
+    </section>
+
+    <!-- Family Section -->
+    <section id="family">
+      <h2>Family</h2>
+      <div class="cards-wrapper">
+        <button onclick="changeCard(-1)" class="arrow-btn">&#10094;</button>
+        <div id="card-container">
+          <div class="family-card active">
+            <h3>Father</h3>
+            <p><strong>Name:</strong> Shailesh C Shah</p>
+            <p><strong>Occupation:</strong> Retired GST Inspector - State Govt.</p>
+            <p><strong>Native:</strong> Dingucha</p>
+            <p><strong>Contact:</strong> 9327113591</p>
+          </div>
+          <div class="family-card">
+            <h3>Mother</h3>
+            <p><strong>Name:</strong> Reenaben S Shah</p>
+            <p><strong>Occupation:</strong> Housewife</p>
+            <p><strong>Native:</strong> Suraj</p>
+          </div>
+          <div class="family-card">
+            <h3>Brother</h3>
+            <p><strong>Name:</strong> Meet S Shah</p>
+            <p><strong>Education:</strong> Computer Engineering, LD College of Engineering</p>
+            <p><strong>Occupation:</strong> Data Engineer, Meditab Software Inc.</p>
+            <p><strong>Contact:</strong> 9510810408 </p>
+          </div>
+        </div>
+        <button onclick="changeCard(1)" class="arrow-btn">&#10095;</button>
+      </div>
+      <div id="dots">
+        <span class="dot active-dot" onclick="showCard(0)"></span>
+        <span class="dot" onclick="showCard(1)"></span>
+        <span class="dot" onclick="showCard(2)"></span>
+      </div>
+    </section>
+
+    <!-- Hobbies Section -->
+    <section id="hobbies">
+      <div class="hobbies-overlay">
+        <div class="hobbies-content">
+          <h2>Hobbies</h2>
+          <div class="hobby-tags">
+            <span class="hobby-tag">Reading</span>
+            <span class="hobby-tag">Singing</span>
+            <span class="hobby-tag">Traveling</span>
+            <span class="hobby-tag">Writing</span>
+            <span class="hobby-tag">Sketching</span>
+            <span class="hobby-tag">Dancing</span>
+            <span class="hobby-tag">Anchoring</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+      <h2>Education</h2>
+      <div class="edu-timeline">
+        <div class="edu-entry">
+          <h3>MBA with Finance</h3>
+          <p><strong>Institution:</strong> KS School of Business Management, Gujarat University, Ahmedabad</p>
+          <p><strong>Duration:</strong> 2016–2021</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Profession -->
+    <section id="profession">
+      <h2>Profession</h2>
+      <div class="profession-card">
+        <h3>Derivative Analyst</h3>
+        <p><strong>Company:</strong> Mansukh Securities & Finance Ltd.</p>
+        <p><strong>Duration:</strong> 2021–2025</p>
+        <p><strong>Location:</strong> Navrangpura, Ahmedabad</p>
+      </div>
+      <div class="profession-card">
+        <h3>Research Analyst</h3>
+        <p><strong>Company:</strong> Junomoneta Finsol Pvt. Ltd.</p>
+        <p><strong>Duration:</strong> 2025–Present</p>
+        <p><strong>Location:</strong> Gift City, Gandhinagar</p>
+      </div>
+    </section>
+
+    <!-- Thoughts Section -->
+    <section id="thoughts">
+      <div class="thoughts-overlay">
+        <div class="thoughts-content">
+          <p class="quote">“Strong believer of the Karma”</p>
+          <p class="quote">“Believes in following heart rather than mind!”<br><span class="author">– Nidhi Shah</span></p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; All rights reserved. 
+    Developed & Maintained by Meet Shah
+  </footer>
+
+  <script>
+    // Carousel navigation
+    let currentCard = 0;
+    const cards = document.querySelectorAll('.family-card');
+    const dots = document.querySelectorAll('.dot');
+
+    function showCard(index) {
+      if (index < 0) index = cards.length - 1;
+      if (index >= cards.length) index = 0;
+      currentCard = index;
+
+      cards.forEach((card, i) => {
+        card.classList.toggle('active', i === currentCard);
+        dots[i].classList.toggle('active-dot', i === currentCard);
+      });
+    }
+
+    function changeCard(direction) {
+      showCard(currentCard + direction);
+    }
+  </script>
+</body>
+</html>
